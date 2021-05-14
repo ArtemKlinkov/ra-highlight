@@ -39,7 +39,7 @@ function Video(props) {
     )
 };
 
-const RatedComponent = (WrappedComponent) => {
+const withRating = (WrappedComponent) => {
   return class extends React.Component {
     render() {
       const { views } = this.props;
@@ -61,8 +61,8 @@ const RatedComponent = (WrappedComponent) => {
   };
 };
 
-const RatedVideo = RatedComponent(Video);
-const RatedArticle = RatedComponent(Article);
+const RatedVideo = withRating(Video);
+const RatedArticle = withRating(Article);
 
 function List(props) {
     // eslint-disable-next-line array-callback-return
